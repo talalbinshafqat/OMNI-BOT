@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compst bot</title>
+    <!-- <link rel="stylesheet" href="hoti.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <style>
+body{
+  /* margin: 0; */
+    background-image: linear-gradient(45deg, transparent 20%, #4169e1 25%, transparent 25%),
+                      linear-gradient(-45deg, transparent 20%, #4169e1 25%, transparent 25%),
+                      linear-gradient(-45deg, transparent 75%, #4169e1 80%, transparent 0),
+                      radial-gradient(#4169e1 2px, transparent 0);
+    background-size: 30px 30px, 30px 30px;
+    
+}
+.container {
+  
+  position: relative;
+        width: 100%;
+        height: 250px; /* Adjust the height according to your needs */
+        padding: 0;
+        /* margin: -10px; */
+        background: linear-gradient(to left, #191970, #4169e1);
+        background-attachment: fixed; /* Add this line to make the background fixed */
+        margin-left: 0px;
+        margin-top: -120px;
+  
+}
+
+.inclined-hr {
+    margin-left: 0.4px;
+    margin-top: -23px;
+  position: absolute;
+  top: 250px;
+  background-repeat: no-repeat;
+  left: 0;
+  width: 100%;
+  border: none;
+  height: 50px; /* Adjust the thickness of the line if needed */
+  background-color: black; /* Adjust the color of the line if needed */
+  transform: rotate(0.8deg); /* Rotate the line by 45 degrees */
+  transform-origin: 0 0; /* Set the rotation origin to the top left corner */
+  background: linear-gradient(to left,#191970,#4169e1);
+  
+}
+.text-overlay {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+.text-overlay1 {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+#botany{
+  color: white;
+}
+.calculator{
+
+    height: 200px;
+    width: 100px;
+border: 1px black solid;
+}
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #00539cff;
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 50px;
+} */
+
+h1 {
+  color: #4169e1;
+  font-size: 3rem;
+}
+
+.convert,
+.exchange {
+  font-family: "Sansita Swashed", cursive;
+  font-size: 25px;
+  color: black;
+  padding-right: 70px;
+}
+
+input {
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  margin: 5px auto;
+  outline: 0;
+  margin-left: 60px;
+}
+
+#original-currency-amount {
+  padding-left: 50px;
+}
+button {
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #00539cff;
+  font-family: "Sansita Swashed", cursive;
+}
+
+select {
+  width: 80px;
+  height: 35px;
+  font-size: 20px;
+  text-align: center;
+  padding-left: 10px;
+  outline: 0;
+}
+
+#exchange {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 20px;
+  outline: 0;
+  color: #00539cff;
+  border: 4px solid #4169e1;
+}
+
+#exchange:active,
+button:active {
+  transform: scale(0.9);
+}
+
+#output-text {
+  display: none;
+  padding: 20px;
+  font-size: 30px;
+  color: black;
+}
+
+span {
+  color: #4169e1;
+
+  font-size: 35px;
+}
+
+#exchange-rate {
+  cursor: default;
+}
+
+footer {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
+
+a {
+  color: black;
+  bottom: 0;
+  font-size: 30px;
+  text-decoration: none;
+}
+.conversion-div{
+    /* border: 0.5px black solid; */
+    margin-left: 40px;
+    margin-top: 80px;
+    width: 40%;
+    padding: 20px;
+    border-radius: 60px;
+    background-color: white;
+    justify-content: flex-start;
+    text-align: left;
+}
+.conversion-div p.convert {
+  display: flex;
+  align-items: center;
+}
+
+.conversion-div input[type="number"],
+.conversion-div input[type="text"],
+.conversion-div select {
+  margin-left: 10px;
+}
+
+#from-currency{
+
+    margin-left: -200px;
+}
+
+.info{
+  height: 1000px;
+  width: 700px;
+  /* border: 1px black solid; */
+  margin-left: 700px;
+  margin-top: -900px;
+  overflow: auto;
+  background-color: white;
+  border-radius: 70px;
+  padding: 20px;
+  
+
+}
+.info::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+@media screen and (max-width:600px){
+  .container{
+    width: 100%;
+  }
+  .inclined-hr{
+    width: 100%;
+  }
+  .text-overlay{
+    width: 70%;
+    margin-top: -8%;
+    margin-left: -4%;
+  }
+  
+  .text-overlay1{
+    width: 70%;
+    margin: -4%;
+  }
+  .conversion-div{
+    width: 60%;
+  }
+  .info{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    float: right;
+    margin-top: 20%;
+    
+  }
+}
+.select{
+  margin-left: 310px;
+  margin-top: -65px;
+}
+    </style>
+</head>
+<body>
+    <h1>Botany Calculators</h1>
+    <div class="container">
+        
+        <hr class="inclined-hr">
+        <span class="text-overlay">Compost Calculator</span>
+        <span class="text-overlay1">
+            <p>This collection is a surprise even for us – it turns out that even in the science of life, there are lots of things to calculate! Here, you can find calculators for gardeners, farmers, pet owners, scientists, and nature enthusiasts! Do you need to know how many plants you need to create an organized and dense flower bed? Or do you want to learn how the inheritance of traits works? Or maybe you own a cow and need to find out when the start of her calving period is? We have calculators to help you with that! Are you a proud pet owner? Learn how to feed your dog according to its size and amount of physical activity. You can even find out what type of cat you are! 🐾🌷</p>
+          </span>
+      </div>
+    <div class="conversion-div"><h1>Awesome Compost Bot</h1>
+    <p class="convert">
+        Length :
+        <input type="number" id="original-currency-amount" placeholder="0" value="1"> </input>
+    </p>
+    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+    <div>
+        <select id="from_currency">
+            <option value="" selected>Meter</option>
+            <option value="">Centemeter</option>
+            <option value="">Kilomater</option>
+            <option value="">Inches</option>
+            <option value="">Feets</option>
+        </select>
+        
+            
+        
+       
+    </div>
+    <p class="convert">
+        Width :
+        <input type="number" id="original-currency-amount" placeholder="0" value="1"> </input>
+    </p>
+    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+    <div>
+        <select id="from_currency">
+            <option value="" selected>Meter</option>
+            <option value="">Centemeter</option>
+            <option value="">Kilomater</option>
+            <option value="">Inches</option>
+            <option value="">Feets</option>
+        </select>
+
+        <p class="convert">
+            Area :
+            <input type="number" id="original-currency-amount" placeholder="0" value="1"> </input>
+        </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+            <select id="from_currency">
+                <option value="" selected>Meter</option>
+                <option value="">Centemeter</option>
+                <option value="">Kilomater</option>
+                <option value="">Inches</option>
+                <option value="">Feets</option>
+            </select>
+
+            <p class="convert">
+              Garden area or Lawn Type :
+              <input type="text" id="original-currency-amount" placeholder="" value=""> </input>
+          </p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+              <select id="from_currency">
+                  <option value="" selected>
+                    New lawn - high compost level</option>
+                  <option value="">
+                    New lawn - low compost level</option>
+                  <option value="">
+                    Established lawn - high compost level</option>
+                  <option value="">
+                    Established lawn - low compost level</option>
+                  
+              </select>
+
+
+
+
+            <p class="convert">
+                Depth :
+                <input type="number" id="original-currency-amount" placeholder="0" value="1"> </input>
+            </p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+                <select id="from_currency">
+                    <option value="" selected>Meter</option>
+                    <option value="">Centemeter</option>
+                    <option value="">Kilomater</option>
+                    <option value="">Inches</option>
+                    <option value="">Feets</option>
+                </select>
+
+
+                <p class="convert">
+                    Volume :
+                    <input type="number" id="original-currency-amount" placeholder="0" value="1"> </input>
+                </p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+                    <select id="from_currency">
+                        <option value="" selected>Meter</option>
+                        <option value="">Centemeter</option>
+                        <option value="">Kilomater</option>
+                        <option value="">Inches</option>
+                        <option value="">Feets</option>
+                    </select>
+    <button id="exchange_button">Calculate now!</button>
+    <p id="output-text">
+        <span id="from"></span> converted to <span id="to"></span>
+    </p>
+    <footer><a href="https://instagram.com/codewith_random?igshid=YmMyMTA2M2Y=" title="share"><i
+                class="fab fa-instagram"></i></a></footer></div> 
+                <div class="info">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h1>Compost Bot</h1>
+                  <h3>&nbsp;&nbsp;&nbsp;&nbsp;Created by &nbsp;Talal Shafqat<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Reviewed by &nbsp;Talal Shafqat</h3>
+
+                    <h4>Compost is a necessary component of the soil for any healthy garden or lawn. Use our compost calculator to calculate the compost needed for any project, big or small. You may also want to check out our mulch calculator to determine how much mulch you need for the area, or our plant spacing calculator to help you plan the size and spacing of your garden.</h4>
+                    <h1>What is compost?
+                    </h1>
+                    <h4>Compost is decayed organic matter - primarily plant products, such as leaves and apple cores. As plant “waste” products are put together in a pile, they naturally break down and produce a nutrient-rich product that invigorates the microorganisms living in the soil. Compost improves the growth, health, and even taste of produce in home gardens and is also useful for large-scale agriculture or lawns. Whether you need a garden compost calculator or figure out how much compost you need for your lawn, our compost calculator can help you figure out how much compost you need.
+
+                    </h4>
+                    <h1>Why use compost?</h1>
+                    <h4>Compost improves the quality of your soil and leads to healthy plants. Compost contains nutrients that are beneficial for plants and boosts the food web living within your soil - this includes earthworms and small battier and fungi. Although we don’t think about these organisms much, they are all critical components to soil health, and a well-balanced food web will allow your plants to take up nutrients more efficiently and possibly withstand disease better. Using compost as the source of nutrients reduces the need for chemical fertilizers, thereby protecting local lakes, rivers, and oceans. As compost enriches the soil, it also reduces compaction, which decreases the need for irrigation, allows for better drainage, and reduces stormwater runoff.</h4>
+
+                    <h1>How much compost should I add to the soil?</h1>
+                    <h4>If you are working with pure compost, it is best to mix it in with your soil. Typically you want to go for a 25% compost, 75% soil mixture. If you are working with a garden, raised bed, or a new lawn, you will want to mix about 1-2 inches of compost into the top 6-8 inches of the existing soil. If you add it to an existing lawn, you should add 1/4 to 1/2 of an inch to the top of the lawn before or after aeration. If you are just working on creating a mixture to apply, remember to add about 25% compost to the soil.
+
+                      Some plants and flower bulbs also thrive in a higher percentage of compost - be sure to do your research before you put them in the ground!</h4>
+
+                      <h1>How do I calculate how much compost I need?</h1>
+                      <h4>How much compost do I need? To calculate how much compost you need, you first need to know the size of the area you want to cover. Just input the length and width of the space into the compost calculator. Next, you need to know the depth of compost that you require. If you know this amount, input it manually into our compost calculator. However, if you are unsure, you can choose your situation (garden, raised bed, new lawn, or established lawn) from the drop-down menu, and we will fill it in for you. Depending on your soil's current quality, you may want a light or heavy dosage of compost. Our program will do the rest to calculate the compost needed! <br>
+
+                        Calculate compost needed: sample calculation for garden compost calculator <br><br><br>
+                        
+                        Say you are creating a new garden that will be 10 feet by 5 feet in size. The soil quality is not great, so you want a heavy dosage of compost to mix in with your soil. <br><br><br>
+                        
+                        <h2>Area = 10 feet x 5 feet = 50 sq. feet</h2> <br><br><br>
+                        
+                        A new garden with a heavy dosage of compost requires 2 inches of compost. <br><br><br>
+                        
+                        <h2>Volume = 50 sq. feet x 2 inches = 0.3 cubic yards, or 8.3 cubic feet</h2> <br><br><br>
+                        
+                        Calculate compost needed: how much compost for an existing lawn? <br><br><br>
+                        
+                        Let’s say your lawn is in much need of some rejuvenation. You are aerating and reseeding your lawn and want to give it a healthy layer of compost as well. The lawn is 110 feet by 80 feet in size. <br><br><br>
+                        
+                        <h2>Area = 110 x 80 = 8,880 sq feet</h2> <br><br><br>
+                        
+                        Since you are just adding on top of an existing lawn, you will add 1/2 inch of compost to the lawn. <br><br><br>
+                        
+                       <h2> Volume = 8,800 sq feet x 1/2 inch = 13.6 cubic yards or 367 cubic feet</h2></h4>
+
+                       <h1>How do I measure compost?</h1>
+                       <h4>Our compost calculator gives you the option to put in the compost’s cost per cubic yard or 1-cubic foot bags. The compost price can vary based on the manufacturer, content, and quantity you buy; however, an average price is $5 for a 1-cubic foot bag.
+
+                        Based on our examples above, it would cost $40 to buy eight 1-cubic feet bags to cover the new garden area or $1,833 to cover the lawn. However, if you are buying compost in bulk, you will likely be able to arrange a lower price.
+                        
+                        But do you know what? You can also make compost for FREE at your own home!</h4>
+
+                        <h1>Composting at home</h1>
+                        <h4>Making your own compost is an excellent way to reduce your food waste, decrease your greenhouse gas emissions, decrease your reliance on chemical fertilizers, and create a useful product to add to your garden and lawn. In addition, composting can save you money by reducing the amount of trash you create and preventing you from buying compost at the store.
+
+                          While starting your own compost may seem like a daunting task, there are many resources online that will help you plan how to compost and know what you should and shouldn’t put in your compost. Depending on your situation, you can create a large or small compost, or even compost inside!</h4>
+                          <h2>What can you include in your compost?</h2>
+                          <h4>
+                            <li>Dry leaves, grass clippings, and garden waste – you can even add in your Christmas tree if you chop it into  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;small pieces first.</li><br>
+                            <li>Food scraps: Fruit and vegetable scraps, as well as eggshells and coffee grounds. Just no meats, dairy, or &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anything containing fats or oils!</li><br>
+                            <li>You can even recycle paper in your compost bin - be sure to tear it up into small pieces so that it will &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decompose more quickly.</li>
+                          <br>
+                          Composting is great for your garden as well as the planet and your wallet, so get out there and start your compost today! If you are looking for other ways to examine your eco-footprint, check out our plastic footprint calculator.
+                        
+                        </h4>
+                </div>
+</body>
+</html>
+

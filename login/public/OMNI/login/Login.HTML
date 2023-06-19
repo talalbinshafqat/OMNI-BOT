@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="div"> 
+      <div class="img">
+        <img src="bio.png" alt="">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="conv.png" alt="">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+        <img src="cons.png" alt="">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="spo.png" alt="">
+      </div>
+      
+      
+
+      <!-- <img src="logo2.png" alt="" id="imga"> -->
+      
+
+
+        <div class="wrap-container">
+          
+            <div class="login-pic">
+                <img src="logo2.png" alt="" id="imga">
+                <h2 id="des">Omni is a versatile online platform offering a collection of calculators and tools to simplify complex calculations across various fields.</h2>
+            </div>
+            <form class="login-form" id="login-form">
+              <span class="login-form-title">Login</span>
+  
+              <div class="wrap-input">
+                <input type="text" class="input" name="username" placeholder=" Username" required id="username">
+
+
+                  <span class="focus-input"></span>
+                  <span class="txt1">Forgot</span><a href="../index.html" class="txt2"> Username?</a>
+              </div>
+              <div class="wrap-input">
+                <input type="password" class="input" name="pass" placeholder="&#xf023; Password" required id="password">
+                  <!-- <i class="fas fa-lock icon"></i> -->
+                  <span class="focus-input"></span>
+                  <span class="txt1">Forgot</span>
+                <a href="../index.html" class="txt2">Password?</a>
+              </div>
+  
+              <div class="login-form-btn-container">
+                <button class="login-form-btn"><a href="../index.html"class="login-form-btn">Login</a></button>
+              </div>
+  
+            <div class="reg">
+               
+                <a href="../register/register.html" class="txt3">Register</a>
+            </div>
+            
+  
+          </form>
+          
+        </div>
+      </div>
+      
+     <script>
+
+document.getElementById('login-form').addEventListener('submit', function(event) {
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  if (username.trim() === '' || password.trim() === '') {
+    event.preventDefault();
+    alert('Please fill in all fields.');
+  }
+});
+
+     </script>
+ 
+</body>
+</html>
