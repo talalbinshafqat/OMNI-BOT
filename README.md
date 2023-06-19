@@ -1,0 +1,2 @@
+# OMNI BOT
+ Universal calculator
